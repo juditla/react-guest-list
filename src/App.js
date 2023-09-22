@@ -117,6 +117,7 @@ export default function App() {
               id="First name"
               value={firstName}
               onChange={(event) => setFirstName(event.currentTarget.value)}
+              disabled={isLoading}
             />
             <label htmlFor="Last name">Last Name:</label>
             <input
@@ -130,6 +131,7 @@ export default function App() {
                   setLastName('');
                 }
               }}
+              disabled={isLoading}
             />
           </fieldset>
         </form>
