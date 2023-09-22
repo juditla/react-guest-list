@@ -6,8 +6,6 @@ export default function App() {
   const [lastName, setLastName] = useState('');
   const [guests, setGuests] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const [isAttending, setIsAttending] = useState(false);
-
   const baseUrl = 'http://localhost:4000';
 
   useEffect(() => {
@@ -29,7 +27,6 @@ export default function App() {
                   onChange={() => {
                     const attendingStatus = !guest.attending;
                     upDateGuest(attendingStatus, guest.id);
-                    // fetchGuests();
                   }}
                   aria-label={`${guest.firstName} ${guest.lastName} attending status`}
                 />
@@ -38,7 +35,6 @@ export default function App() {
                   aria-label={`Remove ${guest.firstName} ${guest.lastName}`}
                   onClick={() => {
                     deleteGuest(guest);
-                    // fetchGuests();
                   }}
                 >
                   Remove
@@ -112,40 +108,33 @@ export default function App() {
   return (
     <>
       <h1>Guestlist for xyz</h1>
-      <form onSubmit={(event) => event.preventDefault()}>
-        <fieldset>
-          <legend>Add a new guest</legend>
-          <label htmlFor="First name">First Name:</label>
-          <input
-            id="First name"
-            value={firstName}
-            onChange={(event) => setFirstName(event.currentTarget.value)}
-          />
-          <label htmlFor="Last name">Last Name:</label>
-          <input
-            id="Last name"
-            value={lastName}
-            onChange={(event) => setLastName(event.currentTarget.value)}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter') {
-                addGuest();
-                // .then(fetchGuests())
-                // .catch((error) => console.error(error));
-
-                // .catch()
-                // .error((error) => error);
-                setFirstName('');
-                setLastName('');
-              }
-            }}
-          />
-        </fieldset>
-      </form>
-      <h2>Guestlist:</h2>
-      <div>
-        {console.log(guests)}
-        {showGuests(guests)}
-        {/* fetch from API to get all guests, depending on how the return looks (object/array/...) -> create a list element with checkbox, Full Name and remove button */}
+      <div data-test-id="guest">
+        <form onSubmit={(event) => event.preventDefault()}>
+          <fieldset>
+            <legend>Add a new guest</legend>
+            <label htmlFor="First name">First Name:</label>
+            <input
+              id="First name"
+              value={firstName}
+              onChange={(event) => setFirstName(event.currentTarget.value)}
+            />
+            <label htmlFor="Last name">Last Name:</label>
+            <input
+              id="Last name"
+              value={lastName}
+              onChange={(event) => setLastName(event.currentTarget.value)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  addGuest();
+                  setFirstName('');
+                  setLastName('');
+                }
+              }}
+            />
+          </fieldset>
+        </form>
+        <h2>Guestlist:</h2>
+        <div>{showGuests(guests)}</div>
       </div>
     </>
   );
