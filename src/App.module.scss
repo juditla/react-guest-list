@@ -1,0 +1,89 @@
+.content {
+  background-color: white;
+  flex-direction: column;
+  border: 1px solid #845a6d;
+  border-radius: 8px;
+  min-width: 300px;
+  width: 80%;
+  padding: 24px;
+  margin-top: 24px;
+  transition: all 0.8s ease;
+  -webkit-transition: 'all 0.8s ease';
+  -moz-transition: 'all 0.8s ease';
+}
+
+h1,
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+  color: #845a6d;
+  text-align: center;
+}
+
+.eventDetails {
+  color: #845a6d;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.inputFields {
+  border: 1px solid #845a6d;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  justify-content: end;
+  align-items: start;
+}
+
+input[type='text'],
+select {
+  width: 110px;
+  margin: 8px 8px;
+
+  &:focus {
+    outline-color: #845a6d;
+  }
+}
+
+.loading {
+  font-family: cursive;
+  padding-left: 16px;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+button {
+  border-radius: 4px;
+  background-color: white;
+  color: #b8a1aa;
+  border: none;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover {
+    color: #845a6d;
+  }
+
+  .deleteAll {
+    color: black;
+  }
+}
+
+.attending {
+  font-size: 12px;
+  color: #845a6d;
+}
+
+input:checked {
+  accent-color: #845a6d;
+}
+
+.individualGuest {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+}
