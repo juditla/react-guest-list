@@ -86,7 +86,7 @@ export default function App() {
       <p>
         Location: <span className={styles.eventDetails}>TBD</span>
       </p>
-      <div data-test-id="guest">
+      <div>
         {/* input form */}
         <form onSubmit={(event) => event.preventDefault()}>
           <div className={styles.inputFields}>

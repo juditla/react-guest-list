@@ -3,7 +3,7 @@ import styles from './App.module.scss';
 
 export default function IndividualGuest(props) {
   return (
-    <div className={styles.individualGuest}>
+    <div className={styles.individualGuest} data-test-id="guest">
       <div>
         <input
           type="checkbox"
