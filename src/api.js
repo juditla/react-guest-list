@@ -1,4 +1,6 @@
-const baseUrl = 'http://localhost:4000';
+// const baseUrl = 'http://localhost:4000';
+const baseUrl =
+  'http://express-guest-list-api-memory-data-store--juditla.repl.co';
 
 export function fetchGuests(setGuests, setIsLoading) {
   fetch(`${baseUrl}/guests`)
