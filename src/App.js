@@ -92,7 +92,7 @@ export default function App() {
           <div className={styles.inputFields}>
             <p>Add a new guest</p>
             <div>
-              <label htmlFor="First name">First Name:</label>
+              <label htmlFor="First name">First name</label>
               <input
                 className={styles.textInput}
                 id="First name"
@@ -102,7 +102,7 @@ export default function App() {
               />
             </div>
             <div>
-              <label htmlFor="Last name">Last Name:</label>
+              <label htmlFor="Last name">Last name</label>
               <input
                 className={styles.textInput}
                 id="Last name"
