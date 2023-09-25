@@ -35,7 +35,7 @@ export default function App() {
             {guestsInDb.map((guest) => {
               if (filter === String(guest.attending) || filter === 'all') {
                 return (
-                  <li key={`guest-${guest.id}`}>
+                  <li key={`guest-${guest.id}`} data-test-id="guest">
                     <IndividualGuest
                       onChange={() => {
                         updateGuest(
