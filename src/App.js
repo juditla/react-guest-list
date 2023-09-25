@@ -31,7 +31,6 @@ export default function App() {
       // create a list element for every guest in the database - including checkbox for attending and remove button
       return (
         <div>
-          <div className={styles.guestlist}></div>
           <ul>
             {guestsInDb.map((guest) => {
               if (filter === String(guest.attending) || filter === 'all') {
@@ -95,7 +94,7 @@ export default function App() {
             <div>
               <label htmlFor="First name">First Name:</label>
               <input
-                type="text"
+                className={styles.textInput}
                 id="First name"
                 value={firstName}
                 onChange={(event) => setFirstName(event.currentTarget.value)}
@@ -105,7 +104,7 @@ export default function App() {
             <div>
               <label htmlFor="Last name">Last Name:</label>
               <input
-                type="text"
+                className={styles.textInput}
                 id="Last name"
                 value={lastName}
                 onChange={(event) => setLastName(event.currentTarget.value)}
