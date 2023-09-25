@@ -1,9 +1,14 @@
 // const baseUrl = 'http://localhost:4000';
 const baseUrl =
-  'http://express-guest-list-api-memory-data-store--juditla.repl.co';
+  'https://express-guest-list-api-memory-data-store--juditla.repl.co';
 
 export function fetchGuests(setGuests, setIsLoading) {
-  fetch(`${baseUrl}/guests`)
+  fetch(`${baseUrl}/guests`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
     .then((response) => response.json())
     .then((data) => {
       setGuests(data);
@@ -54,6 +59,9 @@ export function updateGuest(boolean, id, setGuests, setIsLoading) {
 export function deleteGuest(guest, setGuests, setIsLoading) {
   fetch(`${baseUrl}/guests/${guest.id}`, {
     method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
   })
     .then((response) => response.json)
     .then((data) => {
