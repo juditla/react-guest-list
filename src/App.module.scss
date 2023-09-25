@@ -31,8 +31,8 @@ h2 {
   display: flex;
   flex-direction: column;
   padding: 24px;
-  justify-content: end;
-  align-items: start;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .textInput,
